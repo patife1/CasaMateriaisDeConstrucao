@@ -100,60 +100,93 @@ h3 {
   margin: 20px 0 15px;
 }
 
+/* Grid das categorias */
 .categorias-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
+  margin-top: 20px;
 }
 
+/* Estilo base para todas as categorias */
 .categoria {
   background: var(--light);
   padding: 20px;
-  border-radius: 5px;
-  transition: transform 0.3s;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  text-align: center;
+  border: 2px solid transparent;
 }
 
 .categoria:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.13);
+  border-color: var(--secondary);
+  background: #f5e9e7;
 }
 
 .categoria img {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
   border-radius: 5px;
   margin-bottom: 15px;
+  border: 1px solid #ddd;
+}
+
+.categoria h3 {
+  color: var(--secondary);
+  margin: 15px 0 10px;
+  font-size: 1.2rem;
 }
 
 .categoria ul {
   list-style-position: inside;
+  margin-top: 10px;
+  text-align: left;
+  padding-left: 0;
 }
 
 .categoria li {
   margin-bottom: 8px;
+  font-size: 1rem;
 }
 
-.contact-info {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+/* Personalização individual de cada categoria */
+.categoria1 {
+  border-left: 6px solid #b82919;
+}
+.categoria2 {
+  border-left: 6px solid #1e90ff;
+}
+.categoria3 {
+  border-left: 6px solid #f39c12;
+}
+.categoria4 {
+  border-left: 6px solid #27ae60;
+}
+.categoria5 {
+  border-left: 6px solid #8e44ad;
+}
+.categoria6 {
+  border-left: 6px solid #e67e22;
 }
 
-.contact-card {
-  flex: 1;
-  min-width: 250px;
-  background: var(--light);
-  padding: 20px;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
+/* Responsivo para categorias */
+@media (max-width: 900px) {
+  .categorias-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
-
-.contact-card i {
-  font-size: 2rem;
-  color: var(--secondary);
+@media (max-width: 600px) {
+  .categorias-grid {
+    grid-template-columns: 1fr;
+  }
+  .categoria img {
+    height: 120px;
+  }
 }
 
 footer {
